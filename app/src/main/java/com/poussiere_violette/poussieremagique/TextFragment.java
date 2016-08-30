@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +56,7 @@ public class TextFragment extends Fragment {
 
 
         ran=new Random();
-        destinNumber= ran.nextInt(2 - 1 + 1) + 1;
+        destinNumber= ran.nextInt(4 - 1 + 1) + 1;
         destin=new DESTIN(destinNumber, getContext()); // A supprimer quand il y aura 10 histoires
         // destin=new DESTIN(destinNumber, getApplicationContext()); // a valider quand il y aura 10 histoires
 
@@ -198,7 +199,7 @@ public class TextFragment extends Fragment {
                 v.setAnimation(animation2);
                 break;
             case 4:
-                tv.setText(R.string.t5);
+                tv.setText(destin.getFrag5());
                 animation2.setDuration(50);
                 tv.setAnimation(animation);
                 v.setAnimation(animation2);
@@ -206,6 +207,7 @@ public class TextFragment extends Fragment {
             case 5:
 
                 tv.setAnimation(seq1);
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, destin.getFrag6Size());
                 tv.setText(destin.getFrag6());
                 v.setAnimation(animation3);
                 tv.setOnClickListener(new View.OnClickListener(){

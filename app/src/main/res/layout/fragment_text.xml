@@ -17,7 +17,8 @@
         android:textColor="#ffffffff"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:textSize="100dp"
+        android:textAlignment="center"
+        android:textSize="100sp"
         />
 
 

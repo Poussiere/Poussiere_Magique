@@ -36,7 +36,9 @@ public class destine extends Activity {
     String sousTitre;
     int sousTitreColor;
     Thread thread;
+    int tabSize;
     int bc;
+    int timeSoutitre;
    /* private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -80,7 +82,7 @@ public class destine extends Activity {
         tv=(TextView) findViewById(R.id.sous_titres);
         imagee.setImageResource(destin.getImage());
         sousTitreColor=destin.getSousTitresColor();
-        tv.setTextColor(getResources().getColor(R.color.blanc));
+        tv.setTextColor(getResources().getColor(sousTitreColor));
 
         isThreadRunning=true;
         //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, m�me vide
@@ -99,23 +101,25 @@ public class destine extends Activity {
             public void run() {
                 isThreadRunning=true;
                 int []text=destin.getNouvelles();
+                tabSize=destin.getTabSize();
+                timeSoutitre=destin.getTimeSousTitre();
                 while (isThreadRunning)
                 { try {thread.sleep(1000);}
                 catch (InterruptedException ie) {}
 
-                    for (bc =0; bc<11 ; bc++)
+                    for (bc =0; bc<tabSize ; bc++)
                     {sousTitre= getResources().getString(text[bc]);
                         handler.sendEmptyMessage(0);
 
-                        try {thread.sleep(4000);}
+                        try {thread.sleep(timeSoutitre);}
                         catch (InterruptedException ie) {}
 
-                        if (bc==8)
-                        {sousTitre=getResources().getString(R.string.blank);
-                            handler.sendEmptyMessage(0);
+                       // if (bc==8)
+                      //  {sousTitre=getResources().getString(R.string.blank);
+                       //     handler.sendEmptyMessage(0);
 
-                        try {thread.sleep(1000);}
-                        catch (InterruptedException ie) {}}
+                     //   try {thread.sleep(1000);}
+                     //   catch (InterruptedException ie) {}}
 
                       //  sousTitre=getResources().getString(R.string.blank);
                       //  handler.sendEmptyMessage(0);
