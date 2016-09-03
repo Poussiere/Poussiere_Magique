@@ -4,12 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -17,11 +19,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class destine extends Activity {
+public class destine extends Activity  {
 
     private final Handler mHideHandler = new Handler();
     private View conteneurDuDestin;
@@ -39,24 +43,7 @@ public class destine extends Activity {
     int tabSize;
     int bc;
     int timeSoutitre;
-   /* private final Runnable mHidePart2Runnable = new Runnable() {
-        @SuppressLint("InlinedApi")
-        @Override
-        public void run() {
-            // Delayed removal of status and navigation bar
-
-            // Note that some of these constants are new as of API 16 (Jelly Bean)
-            // and API 19 (KitKat). It is safe to use them, as they are inlined
-            // at compile-time and do nothing on earlier devices.
-            mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        }
-    };
-    */
+    MediaPlayer mPlayer;
 
 
     @Override
@@ -73,16 +60,20 @@ public class destine extends Activity {
 
 
         setContentView(R.layout.activity_destine2);
-        j=getIntent();
-        destinNumber=j.getIntExtra("num",1);
-        destin=new DESTIN(destinNumber,getApplicationContext());
+        j = getIntent();
+        destinNumber = j.getIntExtra("num", 1);
+        destin = new DESTIN(destinNumber, getApplicationContext());
 
         conteneurDuDestin = findViewById(R.id.conteneur_du_destin);
-        imagee=(ImageView)findViewById(R.id.fullscreen_content);
-        tv=(TextView) findViewById(R.id.sous_titres);
+        imagee = (ImageView) findViewById(R.id.fullscreen_content);
+        tv = (TextView) findViewById(R.id.sous_titres);
         imagee.setImageResource(destin.getImage());
-        sousTitreColor=destin.getSousTitresColor();
+        sousTitreColor = destin.getSousTitresColor();
         tv.setTextColor(getResources().getColor(sousTitreColor));
+
+
+
+
 
         isThreadRunning=true;
         //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, m�me vide
@@ -96,10 +87,22 @@ public class destine extends Activity {
 
         };
 
+
+
+
         thread=new Thread(new Runnable() {
             @Override
             public void run() {
                 isThreadRunning=true;
+
+                if (destin.getMusic() != 0) {
+                    mPlayer = MediaPlayer.create(destine.this, destin.getMusic());
+                    mPlayer.start();
+
+
+
+                }
+
                 int []text=destin.getNouvelles();
                 tabSize=destin.getTabSize();
                 timeSoutitre=destin.getTimeSousTitre();
@@ -154,12 +157,28 @@ public void onResume()
 
     }
 
+
+
+
     @Override
     public void onPause()
     {
         isThreadRunning=false;
+
+        if (mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.reset();
+            mPlayer.release();
+            mPlayer = null;
+            Log.i("ACT2", "mediaplayer stoppé");
+        }
+
+
         super.onPause();
     }
+
+
+
 
 
     /*

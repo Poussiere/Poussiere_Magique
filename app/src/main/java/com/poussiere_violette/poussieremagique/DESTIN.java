@@ -19,6 +19,7 @@ public class DESTIN {
     int frag6Size;
     int tabSize;
     int timeSousTitre;
+    int music;
 
     public DESTIN(int destinNumber, Context c) {
 
@@ -29,7 +30,7 @@ public class DESTIN {
                 frag5=R.string.t5;
                frag6=R.string.t6;
                 frag6Size=100;
-                timeSousTitre=4000;
+                timeSousTitre=8000;
 
                 image=R.drawable.lasmall;
                 sousTitresColor=R.color.gris_la;
@@ -46,6 +47,8 @@ public class DESTIN {
                 nouvelles[8]= R.string.n9;
                 nouvelles[9]= R.string.n10;
                 nouvelles[10]=R.string.blank;
+
+                music=R.raw.light_in_the_sky;
                 break;
 
             case 2:
@@ -67,13 +70,15 @@ public class DESTIN {
                 nouvelles[8]= R.string.m9;
                 nouvelles[9]= R.string.m10;
                 nouvelles[10]=R.string.blank;
+
+                music=R.raw.pinto_marisol;
                 break;
 
             case 3:
                 image=R.drawable.lofoten;
                 frag5=R.string.t5;
                 frag6=R.string.t8;
-                timeSousTitre=4500;
+                timeSousTitre=5000;
                 tabSize=11;
                 sousTitresColor=R.color.gris_la;
                 frag6Size=60;
@@ -88,6 +93,8 @@ public class DESTIN {
                 nouvelles[8]= R.string.o9;
                 nouvelles[9]= R.string.o10;
                 nouvelles[10]=R.string.blank;
+
+                music=R.raw.lofosong;
                 break;
 
 
@@ -96,7 +103,7 @@ public class DESTIN {
                 frag5=R.string.t5bis;
                 frag6=R.string.t9;
 
-                timeSousTitre=4500;
+                timeSousTitre=8000;
                 tabSize=13;
                 sousTitresColor=R.color.blanc;
                 frag6Size=60;
@@ -113,6 +120,8 @@ public class DESTIN {
                 nouvelles[10]= R.string.p11;
                 nouvelles[11]= R.string.p12;
                 nouvelles[12]=R.string.blank;
+
+                music=R.raw.corona_radiata;
                 break;
         }
     }
@@ -140,6 +149,9 @@ public class DESTIN {
 
     public int getFrag6Size()
     {return frag6Size;}
+
+    public int getMusic()
+    {return music;}
 
 
 }

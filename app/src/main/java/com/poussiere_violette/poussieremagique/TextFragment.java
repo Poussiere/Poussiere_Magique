@@ -27,7 +27,7 @@ public class TextFragment extends Fragment {
     View v;
     View grandConteneur;
     DESTIN destin;
-    Random ran;
+
     int destinNumber;
 
     static TextFragment init(int val) {
@@ -55,10 +55,9 @@ public class TextFragment extends Fragment {
         grandConteneur=(View) getActivity().findViewById(R.id.main_content);
 
 
-        ran=new Random();
-        destinNumber= ran.nextInt(4 - 1 + 1) + 1;
-        destin=new DESTIN(destinNumber, getContext()); // A supprimer quand il y aura 10 histoires
-        // destin=new DESTIN(destinNumber, getApplicationContext()); // a valider quand il y aura 10 histoires
+        destinNumber=((MainActivity)this.getActivity()).getDestinNumber();
+        destin=new DESTIN(destinNumber, getContext());
+
 
         animation = AnimationUtils.loadAnimation(getContext(),R.anim.zoomout);
         animation2=AnimationUtils.loadAnimation(getContext(),R.anim.blink);

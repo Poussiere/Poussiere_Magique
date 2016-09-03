@@ -20,6 +20,9 @@ public class MainActivity extends FragmentActivity {
     MyFragmentAdapter mAdapter ;
     ViewPager vPager;
     View grandConteneur;
+    Random ran;
+    int destinNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,10 @@ public class MainActivity extends FragmentActivity {
 
 
         setContentView(R.layout.activity_main);
+
+        ran=new Random();
+        destinNumber= ran.nextInt(4 - 1 + 1) + 1;
+
         grandConteneur=(View) findViewById(R.id.main_content);
         mAdapter = new MyFragmentAdapter(getSupportFragmentManager());
         vPager = (ViewPager)findViewById(R.id.container);
@@ -54,6 +61,10 @@ public class MainActivity extends FragmentActivity {
         super.onResume();
 
     }
+
+
+    public int getDestinNumber()
+    {return this.destinNumber;}
 
     public static class MyFragmentAdapter extends FragmentStatePagerAdapter
     {
