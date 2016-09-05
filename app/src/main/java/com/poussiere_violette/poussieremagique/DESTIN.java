@@ -48,7 +48,7 @@ public class DESTIN {
                 nouvelles[9]= R.string.n10;
                 nouvelles[10]=R.string.blank;
 
-                music=R.raw.light_in_the_sky;
+                music=R.raw.qqq;
                 break;
 
             case 2:
@@ -78,7 +78,7 @@ public class DESTIN {
                 image=R.drawable.lofoten;
                 frag5=R.string.t5;
                 frag6=R.string.t8;
-                timeSousTitre=5000;
+                timeSousTitre=7000;
                 tabSize=11;
                 sousTitresColor=R.color.gris_la;
                 frag6Size=60;

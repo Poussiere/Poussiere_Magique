@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -55,7 +56,7 @@ public class TextFragment extends Fragment {
         grandConteneur=(View) getActivity().findViewById(R.id.main_content);
 
 
-        destinNumber=((MainActivity)this.getActivity()).getDestinNumber();
+        destinNumber=((MainActivity2)this.getActivity()).getDestinNumber();
         destin=new DESTIN(destinNumber, getContext());
 
 
@@ -209,14 +210,15 @@ public class TextFragment extends Fragment {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, destin.getFrag6Size());
                 tv.setText(destin.getFrag6());
                 v.setAnimation(animation3);
-                tv.setOnClickListener(new View.OnClickListener(){
+                tv.setOnTouchListener(new View.OnTouchListener(){
 
                     @Override
-                    public void onClick(View v)
+                    public boolean onTouch(View v, MotionEvent m)
                     {Intent i = new Intent(getActivity(), destine.class);
                         i.putExtra("num", destinNumber);
                         tv.setTextColor(00000000);
                         startActivity(i);
+                        return true;
                     }
                 });
 
