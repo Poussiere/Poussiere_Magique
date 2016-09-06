@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import java.util.Random;
 
@@ -23,10 +25,12 @@ public class MainActivity2 extends FragmentActivity {
     View grandConteneur;
     Random ran;
     int destinNumber;
+    Animation animation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         // FOrce l'activité à etre en plein ecran
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -34,14 +38,17 @@ public class MainActivity2 extends FragmentActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
 
         setContentView(R.layout.activity_main2);
 
+
+        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        grandConteneur=(View) findViewById(R.id.main_content);
+        //grandConteneur.startAnimation(animation);
+
         ran=new Random();
         destinNumber= ran.nextInt(4 - 1 + 1) + 1;
-
-        grandConteneur=(View) findViewById(R.id.main_content);
         mAdapter = new MyFragmentAdapter(getSupportFragmentManager());
         vPager = (ViewPager)findViewById(R.id.container);
         vPager.setAdapter(mAdapter);

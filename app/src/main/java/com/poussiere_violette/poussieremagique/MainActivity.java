@@ -2,6 +2,7 @@
 package com.poussiere_violette.poussieremagique;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,7 +23,7 @@ import android.view.animation.AnimationUtils;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private View mContentView;
+    private View mContentView, conteneur;
     Intent i;
-    Animation animation;
+    Animation animation, animation2;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -66,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             // Delayed display of UI elements
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.show();
-            }
+          //  ActionBar actionBar = getSupportActionBar();
+           // if (actionBar != null) {
+            //    actionBar.show();
+          //  }
             mControlsView.setVisibility(View.VISIBLE);
         }
     };
@@ -103,19 +104,21 @@ public class MainActivity extends AppCompatActivity {
 
         mVisible = true;
         mContentView = findViewById(R.id.fullscreen_content);
+        conteneur=(View)findViewById(R.id.conteneur_du_main);
         i=new Intent(MainActivity.this, MainActivity2.class);
-
-
+        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+        animation2= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
 
        mContentView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
 
-               animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.sequential);
-               mContentView.setAnimation(animation);
 
-              /* animation.setAnimationListener(new Animation.AnimationListener() {
+               mContentView.startAnimation(animation);
+            //   conteneur.startAnimation(animation2);
+
+              animation.setAnimationListener(new Animation.AnimationListener() {
                    @Override
                    public void onAnimationStart(Animation animation) {
 
@@ -123,14 +126,14 @@ public class MainActivity extends AppCompatActivity {
 
                    @Override
                    public void onAnimationEnd(Animation animation) {
-                    //startActivity(i);
+                       startActivity(i);
                    }
 
                    @Override
                    public void onAnimationRepeat(Animation animation) {
 
                    }
-               });*/
+               });
 
 
            }
@@ -158,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(500);
+        delayedHide(2000);
     }
 
     private void toggle() {
@@ -171,10 +174,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void hide() {
         // Hide UI first
-      ActionBar actionBar = getSupportActionBar();
+     /* ActionBar actionBar = getSupportActionBar();
        if (actionBar != null) {
           actionBar.hide();
-        }
+        }*/
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
