@@ -17,12 +17,14 @@
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#000000"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="@string/des"
         android:textColor="#ffffff"
         android:textSize="50sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+
+      />
 
 
     <TextView
@@ -33,7 +35,8 @@
         android:text="@string/a_propos"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:textColor="#ffffff"/>
+        android:textColor="#b4b4b4"
+        android:visibility="invisible"/>
 
 
 </RelativeLayout>

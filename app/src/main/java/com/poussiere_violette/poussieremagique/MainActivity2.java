@@ -33,19 +33,19 @@ public class MainActivity2 extends FragmentActivity {
 
         super.onCreate(savedInstanceState);
         // FOrce l'activité à etre en plein ecran
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
 
         setContentView(R.layout.activity_main2);
-
-
-        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        animation=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink_no_repeat);
         grandConteneur=(View) findViewById(R.id.main_content);
-        //grandConteneur.startAnimation(animation);
+       grandConteneur.startAnimation(animation);
 
         ran=new Random();
         destinNumber= ran.nextInt(4 - 1 + 1) + 1;

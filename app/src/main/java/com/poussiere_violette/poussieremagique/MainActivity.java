@@ -16,8 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -34,7 +36,7 @@ public class MainActivity extends Activity {
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
      */
-    private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static final int AUTO_HIDE_DELAY_MILLIS= 3000;
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -42,9 +44,10 @@ public class MainActivity extends Activity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private View mContentView, conteneur;
+    private View  conteneur;
     Intent i;
-    Animation animation, animation2;
+    TextView mContentView, aPropos;
+    Animation animation, animation2,  animation3, animation4;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -99,26 +102,38 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        animation3=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink_no_repeat);
+        animation3.setDuration(1500);
         setContentView(R.layout.activity_main);
+        mContentView = (TextView) findViewById(R.id.fullscreen_content);
+
+        conteneur=(View)findViewById(R.id.conteneur_du_main);
+
+
+        aPropos=(TextView) findViewById(R.id.propos);
 
         mVisible = true;
-        mContentView = findViewById(R.id.fullscreen_content);
-        conteneur=(View)findViewById(R.id.conteneur_du_main);
+
+
         i=new Intent(MainActivity.this, MainActivity2.class);
-        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
-        animation2= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
+        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoominlent);
+        animation.setRepeatCount(4);
+        animation2= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        animation2.setDuration(2000);
+        animation4=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.inverse_blink_no_repeat);
+
 
        mContentView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
-
-
+                animation.setDuration(2000);
+                animation4.setDuration(2000);
                mContentView.startAnimation(animation);
-            //   conteneur.startAnimation(animation2);
+               conteneur.startAnimation(animation4);
 
-              animation.setAnimationListener(new Animation.AnimationListener() {
+
+              animation4.setAnimationListener(new Animation.AnimationListener() {
                    @Override
                    public void onAnimationStart(Animation animation) {
 
@@ -126,7 +141,9 @@ public class MainActivity extends Activity {
 
                    @Override
                    public void onAnimationEnd(Animation animation) {
+
                        startActivity(i);
+                   // overridePendingTransition(R.anim.blink_no_repeat, R.anim.blink_no_repeat);
                    }
 
                    @Override
@@ -161,7 +178,8 @@ public class MainActivity extends Activity {
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(2000);
+        delayedHide(0);
+
     }
 
     private void toggle() {
@@ -182,7 +200,9 @@ public class MainActivity extends Activity {
 
         // Schedule a runnable to remove the status and navigation bar after a delay
         mHideHandler.removeCallbacks(mShowPart2Runnable);
-        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
+
+      mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
+
     }
 
     @SuppressLint("InlinedApi")
@@ -195,7 +215,10 @@ public class MainActivity extends Activity {
         // Schedule a runnable to display UI elements after a delay
         mHideHandler.removeCallbacks(mHidePart2Runnable);
         mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+
+
     }
+
 
     /**
      * Schedules a call to hide() in [delay] milliseconds, canceling any
@@ -206,7 +229,34 @@ public class MainActivity extends Activity {
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
+@Override
+    public void onResume()
+{
+  conteneur.startAnimation(animation3);
 
+    animation3.setAnimationListener(new Animation.AnimationListener() {
+        @Override
+        public void onAnimationStart(Animation animation) {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animation animation) {
+            mContentView.setText(R.string.des);
+            mContentView.startAnimation(animation2);
+            aPropos.setVisibility(View.VISIBLE);
+            aPropos.startAnimation(animation2);
+        }
+
+        @Override
+        public void onAnimationRepeat(Animation animation) {
+
+        }
+    });
+
+
+    super.onResume();
+}
 
 
 
