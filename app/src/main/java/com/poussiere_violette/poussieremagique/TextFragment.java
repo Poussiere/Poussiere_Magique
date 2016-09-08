@@ -66,97 +66,6 @@ public class TextFragment extends Fragment {
         animation3=AnimationUtils.loadAnimation(getContext(),R.anim.blink_no_repeat);
 
 
-   /*     switch (fragVal) {
-            case 0:
-                tv.setText(R.string.t1);
-
-              // animation2.setDuration(1000);
-               tv.setAnimation(animation);
-             //   v.setAnimation(animation2);
-                break;
-            case 1:
-                tv.setText(R.string.t2);
-                animation2.setDuration(300);
-                tv.setAnimation(animation);
-                v.setAnimation(animation2);
-                break;
-            case 2:
-                tv.setText(R.string.t3);
-                animation2.setDuration(200);
-                tv.setAnimation(animation);
-                v.setAnimation(animation2);
-                break;
-            case 3:
-                tv.setText(R.string.t4);
-                animation2.setDuration(100);
-                tv.setAnimation(animation);
-                v.setAnimation(animation2);
-                break;
-            case 4:
-                tv.setText(R.string.t5);
-                animation2.setDuration(50);
-                tv.setAnimation(animation);
-                v.setAnimation(animation2);
-                break;
-            case 5:
-               String x = destin.getFrag6();
-                tv.setAnimation(seq1);
-              tv.setText("r"+x+"ve");
-
-               v.setAnimation(animation3);
-                tv.setOnClickListener(new View.OnClickListener(){
-
-                    @Override
-                    public void onClick(View v)
-                    {Intent i = new Intent(getActivity(), destine.class);
-                        i.putExtra("num",destinNumber);
-
-                       tv.setTextColor(00000000);
-                        startActivity(i);
-                                          }
-                                      });
-*/
-
-              /*  animation3.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        Intent i = new Intent(getActivity(), destine.class);
-                        startActivity(i);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-
-
-                break;}
-*/
-
-        /*
-        animation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                v.setAnimation(animation2);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-*/
         return layoutView;
 
     }
@@ -210,38 +119,20 @@ public class TextFragment extends Fragment {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, destin.getFrag6Size());
                 tv.setText(destin.getFrag6());
                 v.setAnimation(animation3);
-                tv.setOnTouchListener(new View.OnTouchListener(){
+                tv.setOnClickListener(new View.OnClickListener(){
 
                     @Override
-                    public boolean onTouch(View v, MotionEvent m)
+                    public void onClick(View v)
                     {Intent i = new Intent(getActivity(), destine.class);
                         i.putExtra("num", destinNumber);
                         tv.setTextColor(00000000);
                         startActivity(i);
-                        return true;
-                    }
-                });
-
-
-              /*  animation3.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        Intent i = new Intent(getActivity(), destine.class);
-                        startActivity(i);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
 
                     }
                 });
 
-                */
+
+
                 break;}
 
     }

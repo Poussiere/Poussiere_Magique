@@ -24,9 +24,10 @@
             android:label="@string/title_activity_destine"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name=".MainActivity2"
-            android:screenOrientation="sensorLandscape"
-            />
+        <activity
+            android:name=".MainActivity2"
+            android:screenOrientation="sensorLandscape" />
+        <activity android:name=".APropos"></activity>
     </application>
 
 </manifest>

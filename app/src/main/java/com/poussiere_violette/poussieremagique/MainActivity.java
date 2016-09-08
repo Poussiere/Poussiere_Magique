@@ -45,9 +45,9 @@ public class MainActivity extends Activity {
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private View  conteneur;
-    Intent i;
+    Intent i, j;
     TextView mContentView, aPropos;
-    Animation animation, animation2,  animation3, animation4;
+    Animation animation, animation2,  animation3, animation4, animation5, animation6;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -65,7 +65,6 @@ public class MainActivity extends Activity {
                     | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
     };
-    private View mControlsView;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {
@@ -74,7 +73,7 @@ public class MainActivity extends Activity {
            // if (actionBar != null) {
             //    actionBar.show();
           //  }
-            mControlsView.setVisibility(View.VISIBLE);
+          //  mControlsView.setVisibility(View.VISIBLE);
         }
     };
     private boolean mVisible;
@@ -109,28 +108,61 @@ public class MainActivity extends Activity {
 
         conteneur=(View)findViewById(R.id.conteneur_du_main);
 
-
         aPropos=(TextView) findViewById(R.id.propos);
 
         mVisible = true;
 
 
         i=new Intent(MainActivity.this, MainActivity2.class);
+        j=new Intent(MainActivity.this,APropos.class);
+
+        aPropos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(j);
+            }
+        });
+
+
         animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoominlent);
-        animation.setRepeatCount(4);
         animation2= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         animation2.setDuration(2000);
         animation4=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.inverse_blink_no_repeat);
+        animation5=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+        animation6=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink_no_repeat);
 
+        animation.setDuration(2000);
+        animation4.setDuration(2000);
+        animation5.setDuration(2000);
+        animation6.setDuration(900);
 
        mContentView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
-                animation.setDuration(2000);
-                animation4.setDuration(2000);
-               mContentView.startAnimation(animation);
                conteneur.startAnimation(animation4);
+               mContentView.startAnimation(animation);
+               mContentView.startAnimation(animation5);
+
+
+
+               animation6.setAnimationListener(new Animation.AnimationListener() {
+                   @Override
+                   public void onAnimationStart(Animation animation) {
+
+                   }
+
+                   @Override
+                   public void onAnimationEnd(Animation animation) {
+                       startActivity(i);
+                   }
+
+                   @Override
+                   public void onAnimationRepeat(Animation animation) {
+
+                   }
+               });
+
 
 
               animation4.setAnimationListener(new Animation.AnimationListener() {
@@ -142,8 +174,13 @@ public class MainActivity extends Activity {
                    @Override
                    public void onAnimationEnd(Animation animation) {
 
-                       startActivity(i);
-                   // overridePendingTransition(R.anim.blink_no_repeat, R.anim.blink_no_repeat);
+
+                      conteneur.startAnimation(animation6);
+                      mContentView.setText("");
+                       aPropos.setText("");
+
+
+
                    }
 
                    @Override

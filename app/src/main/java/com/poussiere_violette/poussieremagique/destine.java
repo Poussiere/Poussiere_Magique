@@ -117,18 +117,6 @@ public class destine extends Activity  {
                         try {thread.sleep(timeSoutitre);}
                         catch (InterruptedException ie) {}
 
-                       // if (bc==8)
-                      //  {sousTitre=getResources().getString(R.string.blank);
-                       //     handler.sendEmptyMessage(0);
-
-                     //   try {thread.sleep(1000);}
-                     //   catch (InterruptedException ie) {}}
-
-                      //  sousTitre=getResources().getString(R.string.blank);
-                      //  handler.sendEmptyMessage(0);
-
-                     //   try {thread.sleep(2000);}
-                     //   catch (InterruptedException ie) {}
 
                     }
 

@@ -43,14 +43,15 @@ public class MainActivity2 extends FragmentActivity {
 
 
         setContentView(R.layout.activity_main2);
-        animation=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink_no_repeat);
+        animation=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         grandConteneur=(View) findViewById(R.id.main_content);
-       grandConteneur.startAnimation(animation);
+        vPager = (ViewPager)findViewById(R.id.container);
+       vPager.startAnimation(animation);
 
         ran=new Random();
         destinNumber= ran.nextInt(4 - 1 + 1) + 1;
         mAdapter = new MyFragmentAdapter(getSupportFragmentManager());
-        vPager = (ViewPager)findViewById(R.id.container);
+
         vPager.setAdapter(mAdapter);
 
     }

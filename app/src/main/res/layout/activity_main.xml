@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000000"
     android:id="@+id/conteneur_du_main"
     tools:context="com.poussiere_violette.poussieremagique.MainActivity">
 
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
+
+
     <TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
+
         android:gravity="center"
         android:keepScreenOn="true"
         android:textColor="#ffffff"
         android:textSize="50sp"
         android:textStyle="bold"
 
-      />
+        android:layout_above="@+id/propos"
+         />
 
 
     <TextView
@@ -36,7 +35,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:textColor="#b4b4b4"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        />
+
+
 
 
 </RelativeLayout>
