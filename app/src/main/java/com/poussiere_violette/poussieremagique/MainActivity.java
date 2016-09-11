@@ -18,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
@@ -48,6 +49,7 @@ public class MainActivity extends Activity {
     Intent i, j;
     TextView mContentView, aPropos;
     Animation animation, animation2,  animation3, animation4, animation5, animation6;
+    AnimationSet animationSet;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -110,6 +112,8 @@ public class MainActivity extends Activity {
 
         aPropos=(TextView) findViewById(R.id.propos);
 
+
+
         mVisible = true;
 
 
@@ -124,7 +128,7 @@ public class MainActivity extends Activity {
         });
 
 
-        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoominlent);
+        animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zominlent2);
         animation2= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         animation2.setDuration(2000);
         animation4=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.inverse_blink_no_repeat);
@@ -136,13 +140,19 @@ public class MainActivity extends Activity {
         animation5.setDuration(2000);
         animation6.setDuration(900);
 
+        animationSet=new AnimationSet(true);
+        animationSet.addAnimation(animation);
+        animationSet.addAnimation(animation5);
+
+        mContentView.startAnimation(animation2);
+        aPropos.startAnimation(animation2);
+
        mContentView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
                conteneur.startAnimation(animation4);
-               mContentView.startAnimation(animation);
-               mContentView.startAnimation(animation5);
+               mContentView.startAnimation(animationSet);
 
 
 
@@ -269,7 +279,9 @@ public class MainActivity extends Activity {
 @Override
     public void onResume()
 {
-  conteneur.startAnimation(animation3);
+
+
+    conteneur.startAnimation(animation3);
 
     animation3.setAnimationListener(new Animation.AnimationListener() {
         @Override
@@ -280,9 +292,9 @@ public class MainActivity extends Activity {
         @Override
         public void onAnimationEnd(Animation animation) {
             mContentView.setText(R.string.des);
-            mContentView.startAnimation(animation2);
-            aPropos.setVisibility(View.VISIBLE);
-            aPropos.startAnimation(animation2);
+
+            aPropos.setText(R.string.a_propos);
+
         }
 
         @Override
@@ -296,5 +308,8 @@ public class MainActivity extends Activity {
 }
 
 
-
+@Override
+    public void onPause()
+{super.onPause();
+finish();}
 }

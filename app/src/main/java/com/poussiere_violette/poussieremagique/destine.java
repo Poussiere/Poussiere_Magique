@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class destine extends Activity  {
     int bc;
     int timeSoutitre;
     MediaPlayer mPlayer;
+    boolean clickToLeave =false;
 
 
     @Override
@@ -69,10 +71,7 @@ public class destine extends Activity  {
         tv = (TextView) findViewById(R.id.sous_titres);
         imagee.setImageResource(destin.getImage());
         sousTitreColor = destin.getSousTitresColor();
-        tv.setTextColor(getResources().getColor(sousTitreColor));
-
-
-
+        tv.setTextColor(ContextCompat.getColor(getApplicationContext(), sousTitreColor));
 
 
         isThreadRunning=true;
@@ -82,6 +81,18 @@ public class destine extends Activity  {
             public void handleMessage(Message msg){
                 super.handleMessage(msg);
                 tv.setText(sousTitre);
+                if (clickToLeave)
+                {
+                    imagee.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent startMain = new Intent(Intent.ACTION_MAIN);
+                            startMain.addCategory(Intent.CATEGORY_HOME);
+                            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(startMain);
+                        }
+                    });
+                }
 
             }
 
@@ -99,9 +110,8 @@ public class destine extends Activity  {
                     mPlayer = MediaPlayer.create(destine.this, destin.getMusic());
                     mPlayer.start();
 
-
-
                 }
+
 
                 int []text=destin.getNouvelles();
                 tabSize=destin.getTabSize();
@@ -112,7 +122,10 @@ public class destine extends Activity  {
 
                     for (bc =0; bc<tabSize ; bc++)
                     {sousTitre= getResources().getString(text[bc]);
+
+                        if (bc==(tabSize-1)) clickToLeave=true;
                         handler.sendEmptyMessage(0);
+
 
                         try {thread.sleep(timeSoutitre);}
                         catch (InterruptedException ie) {}
@@ -126,6 +139,8 @@ public class destine extends Activity  {
             }
         });
         thread.start();
+
+
 
 
     }
@@ -163,21 +178,15 @@ public void onResume()
 
 
         super.onPause();
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // ne fais rien. Le destin ne connait pas le mot retour
     }
 
 
 
-
-
-    /*
-    public static final int getColor(Context context, int id) {
-        final int version = Build.VERSION.SDK_INT;
-        if (version >= 23) {
-            return ContextCompatApi23.getColor(context, id);
-        } else {
-            return context.getResources().getColor(id);
-        }
-    }
-       */
 
 }

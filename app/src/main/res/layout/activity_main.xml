@@ -6,36 +6,39 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:id="@+id/conteneur_du_main"
+    android:keepScreenOn="true"
     tools:context="com.poussiere_violette.poussieremagique.MainActivity">
 
 
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/propos">
+
 
     <TextView
         android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:keepScreenOn="true"
         android:textColor="#ffffff"
         android:textSize="50sp"
         android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:text=" "/>
 
-        android:layout_above="@+id/propos"
-         />
-
-
+</RelativeLayout>
     <TextView
 
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
         android:id="@+id/propos"
-        android:text="@string/a_propos"
+        android:text=" "
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:textColor="#b4b4b4"
-        android:visibility="invisible"
+
         />
 
 

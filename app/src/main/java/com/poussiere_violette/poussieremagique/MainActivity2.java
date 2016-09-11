@@ -2,6 +2,7 @@
 package com.poussiere_violette.poussieremagique;
 
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.Fragment;
@@ -71,6 +72,16 @@ public class MainActivity2 extends FragmentActivity {
 
     }
 
+
+    @Override
+    public void onPause()
+    {super.onPause();
+    finish();}
+
+    @Override
+    public void onBackPressed()
+    {
+        startActivity(new Intent(MainActivity2.this, MainActivity.class));}
 
     public int getDestinNumber()
     {return this.destinNumber;}
