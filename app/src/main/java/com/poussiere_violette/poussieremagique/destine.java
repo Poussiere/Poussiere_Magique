@@ -86,10 +86,9 @@ public class destine extends Activity  {
                     imagee.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent startMain = new Intent(Intent.ACTION_MAIN);
-                            startMain.addCategory(Intent.CATEGORY_HOME);
-                            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(startMain);
+                        Intent in=new Intent(destine.this, QueFaire.class);
+                            in.putExtra("num", destinNumber);
+                            startActivity(in);
                         }
                     });
                 }
@@ -155,6 +154,8 @@ public void onResume()
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+
         super.onResume();
 
 
@@ -175,11 +176,15 @@ public void onResume()
             mPlayer = null;
             Log.i("ACT2", "mediaplayer stoppé");
         }
+        super.onStop();
 
 
         super.onPause();
         finish();
+
+
     }
+
 
     @Override
     public void onBackPressed() {
