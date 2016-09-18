@@ -30,7 +30,7 @@
         android:textColor="#ffffffff"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:text="@string/retour_destin"
         android:layout_below="@+id/que_faire"
         android:layout_centerHorizontal="true"
@@ -43,11 +43,11 @@
         android:textColor="#ffffffff"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:text="@string/relancer_roue"
         android:layout_below="@+id/retour_destin"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="40dp" />
 
 
      <TextView
@@ -57,10 +57,10 @@
         android:textColor="#ffffffff"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:text="@string/quitter"
         android:layout_below="@+id/relancer_roue"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="40dp" />
 
 </RelativeLayout>

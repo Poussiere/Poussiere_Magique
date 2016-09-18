@@ -89,6 +89,7 @@ public class destine extends Activity  {
                         Intent in=new Intent(destine.this, QueFaire.class);
                             in.putExtra("num", destinNumber);
                             startActivity(in);
+                            overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
                         }
                     });
                 }

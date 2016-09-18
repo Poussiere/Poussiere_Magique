@@ -16,7 +16,7 @@ public class QueFaire extends Activity {
     View conteneur;
     TextView tv1, tv2, tv3, tv4;
     Intent i, j , k, startMain;
-    Animation fondu;
+    Animation fondu, sortie;
     int destinNumber;
 
     @Override
@@ -35,8 +35,10 @@ public class QueFaire extends Activity {
         tv3=(TextView)findViewById(R.id.relancer_roue);
         tv4=(TextView)findViewById(R.id.quitter);
         conteneur = (View)findViewById(R.id.conteneur_du_que_faire);
-        fondu= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
-        fondu.setDuration(1000);
+        fondu=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
+        sortie=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
+        fondu.setDuration(500);
+        sortie.setDuration(500);
         i=new Intent(QueFaire.this, destine.class);
         j=new Intent(QueFaire.this, MainActivity.class);
         startMain = new Intent(Intent.ACTION_MAIN);
@@ -61,6 +63,7 @@ public class QueFaire extends Activity {
                     public void onAnimationEnd(Animation animation) {
                         i.putExtra("num", destinNumber);
                         startActivity(i);
+                        overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
                     }
 
                     @Override
@@ -147,6 +150,11 @@ public class QueFaire extends Activity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         super.onResume();
 
-
     }
+
+    @Override
+    public void onPause()
+    {
+    super.onPause();}
 }
+
