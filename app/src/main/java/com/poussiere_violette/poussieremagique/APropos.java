@@ -2,6 +2,7 @@ package com.poussiere_violette.poussieremagique;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.WindowManager;
 
 public class APropos extends Activity {
 
+    View creativeImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +23,16 @@ public class APropos extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_apropos);
+        creativeImage=(View)findViewById(R.id.image_apropos);
 
-
+        creativeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String lien=getResources().getString(R.string.creative_lien);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(lien));
+                startActivity(browserIntent);
+            }
+        });
     }
 
     @Override
@@ -33,6 +43,6 @@ public class APropos extends Activity {
     @Override
     public void onPause()
     {super.onPause();
-    finish();}
+    }
 
 }
