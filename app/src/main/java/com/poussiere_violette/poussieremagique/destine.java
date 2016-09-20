@@ -114,6 +114,16 @@ public class destine extends Activity  {
                 if (destin.getMusic() != 0) {
                     mPlayer = MediaPlayer.create(destine.this, destin.getMusic());
                     mPlayer.start();
+                    mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            Intent in=new Intent(destine.this, QueFaire.class);
+                            in.putExtra("num", destinNumber);
+                            startActivity(in);
+                            overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
+                        }
+                    });
+
 
                 }
 
@@ -144,7 +154,6 @@ public class destine extends Activity  {
             }
         });
         thread.start();
-
 
 
 

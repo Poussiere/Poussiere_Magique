@@ -27,8 +27,14 @@
         <activity
             android:name=".MainActivity2"
             android:screenOrientation="sensorLandscape" />
-        <activity android:name=".APropos" />
-        <activity android:name=".QueFaire"></activity>
+        <activity
+            android:name=".APropos"
+            android:screenOrientation="sensorLandscape"
+            />
+        <activity
+            android:name=".QueFaire"
+            android:screenOrientation="sensorLandscape"
+        />
     </application>
 
 </manifest>

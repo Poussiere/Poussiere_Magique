@@ -14,7 +14,7 @@ public class DESTIN {
 
     int frag5, frag6 ;
     int image;
-    int[] nouvelles = new int [13] ;
+    int[] nouvelles = new int [20] ;
     int sousTitresColor;
     int frag6Size;
     int tabSize;
@@ -25,10 +25,8 @@ public class DESTIN {
 
         switch (destinNumber) {
             case 1:
-              //  String x = "ȇ";
-               // frag6=c.getResources().getString(R.string.t6);
                 frag5=R.string.t5;
-               frag6=R.string.t6;
+                frag6=R.string.t6;
                 frag6Size=100;
                 timeSousTitre=8000;
 
@@ -79,7 +77,7 @@ public class DESTIN {
                 frag5=R.string.t5;
                 frag6=R.string.t8;
                 timeSousTitre=7000;
-                tabSize=11;
+                tabSize=14;
                 sousTitresColor=R.color.gris_la;
                 frag6Size=60;
                 nouvelles[0]= R.string.o1;
@@ -92,7 +90,10 @@ public class DESTIN {
                 nouvelles[7]= R.string.o8;
                 nouvelles[8]= R.string.o9;
                 nouvelles[9]= R.string.o10;
-                nouvelles[10]=R.string.blank;
+                nouvelles[10]=R.string.o11;
+                nouvelles[11]=R.string.o12;
+                nouvelles[12]=R.string.o13;
+                nouvelles[13]=R.string.blank;
 
                 music=R.raw.lofosong;
                 break;
@@ -104,7 +105,7 @@ public class DESTIN {
                 frag6=R.string.t9;
 
                 timeSousTitre=8000;
-                tabSize=13;
+                tabSize=14;
                 sousTitresColor=R.color.blanc;
                 frag6Size=60;
                 nouvelles[0]= R.string.p1;
@@ -119,7 +120,8 @@ public class DESTIN {
                 nouvelles[9]= R.string.p10;
                 nouvelles[10]= R.string.p11;
                 nouvelles[11]= R.string.p12;
-                nouvelles[12]=R.string.blank;
+                nouvelles[12]= R.string.p13;
+                nouvelles[13]=R.string.blank;
 
                 music=R.raw.corona_radiata;
                 break;
