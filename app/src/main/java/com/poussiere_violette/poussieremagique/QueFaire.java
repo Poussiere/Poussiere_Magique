@@ -155,6 +155,7 @@ public class QueFaire extends Activity {
     @Override
     public void onPause()
     {
-    super.onPause();}
+    super.onPause();
+    finish();}
 }
 

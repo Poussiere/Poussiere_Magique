@@ -190,7 +190,6 @@ public void onResume()
             mPlayer.reset();
             mPlayer.release();
             mPlayer = null;
-            Log.i("ACT2", "mediaplayer stoppé");
         }
         super.onStop();
 
