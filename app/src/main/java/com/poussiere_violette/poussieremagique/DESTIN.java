@@ -92,8 +92,7 @@ public class DESTIN {
                 nouvelles[9]= R.string.o10;
                 nouvelles[10]=R.string.o11;
                 nouvelles[11]=R.string.o12;
-                nouvelles[12]=R.string.o13;
-                nouvelles[13]=R.string.blank;
+                nouvelles[12]=R.string.blank;
 
                 music=R.raw.lofosong;
                 break;

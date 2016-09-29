@@ -15,6 +15,8 @@
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerInside"
+
 
        />
 
@@ -25,7 +27,6 @@
         android:textSize="22sp"
         android:gravity="center"
         android:textAlignment="center"
-        android:singleLine="false"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="60dp"

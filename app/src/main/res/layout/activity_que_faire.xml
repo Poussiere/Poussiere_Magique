@@ -12,29 +12,11 @@
     tools:context="com.poussiere_violette.poussieremagique.QueFaire">
 
 
-    <TextView
-        android:id="@+id/que_faire"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffffff"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:text="@string/title_activity_que_faire"/>
-
-    <TextView
-        android:id="@+id/retour_destin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffffff"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:text="@string/retour_destin"
-        android:layout_below="@+id/que_faire"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    >
 
     <TextView
         android:id="@+id/relancer_roue"
@@ -62,5 +44,33 @@
         android:layout_below="@+id/relancer_roue"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/que_faire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:text="@string/title_activity_que_faire"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/retour_destin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:text="@string/retour_destin"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/que_faire"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
 
 </RelativeLayout>
