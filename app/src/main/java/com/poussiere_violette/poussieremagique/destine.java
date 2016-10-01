@@ -130,7 +130,7 @@ public class destine extends Activity  {
                 if (destin.getMusic() != 0) {
                     mPlayer = MediaPlayer.create(destine.this, destin.getMusic());
                     mPlayer.start();
-                 /*   mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                 mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
                             Intent in=new Intent(destine.this, QueFaire.class);
@@ -139,7 +139,7 @@ public class destine extends Activity  {
                             overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
                         }
                     });
-                */
+
 
                 }
 

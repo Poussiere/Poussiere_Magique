@@ -27,7 +27,7 @@ import android.support.design.widget.TabLayout;
 import java.util.Random;
 
 /**
- * Chaque objet destin possede un texte spécifique pour le sixième fragment d'introduction, une image et un tableau de 10 String correspondant commentaire de la photo au (puis une musique)
+ * Chaque objet destin possede un texte spécifique pour le sixième fragment d'introduction, une image, une musique et un tableau de x String correspondant aux commentaires qui défilent sur l'image
  */
 public class DESTIN {
 
@@ -97,7 +97,7 @@ public class DESTIN {
                 frag5=R.string.t5;
                 frag6=R.string.t8;
                 timeSousTitre=7000;
-                tabSize=14;
+                tabSize=13;
                 sousTitresColor=R.color.gris_la;
                 frag6Size=60;
                 nouvelles[0]= R.string.o1;

@@ -1,8 +1,8 @@
 # Poussiere_Magique
  
- Ce programme est une application artistique. Il s'agit d'une roue du destin qui mène vers plusieurs scénarii. 
- Il offre une expérience surprenante à son utilisateur. Il doit l'amener à réfléchir sur le sens de la vie, du destin, du temps     qui passe... par la transmission d'émotions brèves mais intenses. 
- Cette application est également un hommage à plusieurs oeuvres d'art, du cinéma, de la littérature et du jeu video. 
+ Ce programme est une application à vocation artistique. Il s'agit d'une roue du destin qui mène vers plusieurs scénarii offrant une expérience sensorielle à l'utilisateur.
+ C'est une réflexion sur le sens de la vie, du destin, du temps qui passe... par la transmission d'émotions brèves mais intenses.
+ Cette application est également un hommage à plusieurs oeuvres du cinéma, de la littérature et du jeu video. 
  
  
     Copyright (C) <2016>  <Nicolas Boutin>
