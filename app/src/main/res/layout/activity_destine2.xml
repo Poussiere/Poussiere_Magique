@@ -6,9 +6,6 @@
     android:id="@+id/conteneur_du_destin"
     tools:context="com.poussiere_violette.poussieremagique.destine">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
 
 
     <ImageView
@@ -27,7 +24,7 @@
         android:textSize="22sp"
         android:gravity="center"
         android:textAlignment="center"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/fullscreen_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp" />
