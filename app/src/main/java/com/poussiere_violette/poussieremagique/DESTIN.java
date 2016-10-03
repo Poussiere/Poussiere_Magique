@@ -123,7 +123,7 @@ public class DESTIN {
                 frag5=R.string.t5bis;
                 frag6=R.string.t9;
 
-                timeSousTitre=10000;
+                timeSousTitre=9000;
                 tabSize=14;
                 sousTitresColor=R.color.blanc;
                 frag6Size=60;
