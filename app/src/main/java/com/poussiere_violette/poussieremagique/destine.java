@@ -73,12 +73,6 @@ public class destine extends Activity  {
         //Forcer l'ecran à rester allumé
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        // FOrce l'activité à etre en plein ecran
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
         setContentView(R.layout.activity_destine2);
 
 

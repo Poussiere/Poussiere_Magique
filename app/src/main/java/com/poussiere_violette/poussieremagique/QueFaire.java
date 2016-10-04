@@ -43,11 +43,6 @@ public class QueFaire extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        // FOrce l'activité à etre en plein ecran
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_que_faire);
 
         tv1=(TextView)findViewById(R.id.que_faire);

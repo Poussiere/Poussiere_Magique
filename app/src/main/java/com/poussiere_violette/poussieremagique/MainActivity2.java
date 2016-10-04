@@ -54,13 +54,6 @@ public class MainActivity2 extends FragmentActivity {
 
         super.onCreate(savedInstanceState);
 
-        // FOrce l'activité à etre en plein ecran
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-
         setContentView(R.layout.activity_main2);
         animation=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         grandConteneur=(View) findViewById(R.id.main_content);
