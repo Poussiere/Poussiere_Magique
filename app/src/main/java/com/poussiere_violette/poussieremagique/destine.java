@@ -46,24 +46,23 @@ import java.io.IOException;
 
 public class destine extends Activity  {
 
-    private final Handler mHideHandler = new Handler();
+
     private View conteneurDuDestin;
-    private ImageView myImage;
-    Intent j;
-    int destinNumber;
-    DESTIN destin;
-    ImageView imagee;
-    boolean isThreadRunning;
-    Handler handler;
-    TextView tv;
-    String sousTitre;
-    int sousTitreColor;
-    Thread thread;
-    int tabSize;
-    int bc;
-    int timeSoutitre;
-    MediaPlayer mPlayer;
-    boolean clickToLeave =false;
+    private Intent j;
+    private int destinNumber;
+    private DESTIN destin;
+    private ImageView imagee;
+    private boolean isThreadRunning;
+    private Handler handler;
+    private TextView tv;
+    private  String sousTitre;
+    private int sousTitreColor;
+    private Thread thread;
+    private int tabSize;
+    private int bc;
+    private int timeSoutitre;
+    private MediaPlayer mPlayer;
+    private boolean clickToLeave =false;
 
 
 

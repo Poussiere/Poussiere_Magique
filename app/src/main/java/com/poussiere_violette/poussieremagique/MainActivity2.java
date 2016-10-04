@@ -41,22 +41,20 @@ import java.util.Random;
 public class MainActivity2 extends FragmentActivity {
 
     public static int ITEMS = 6;
-    MyFragmentAdapter mAdapter ;
-    ViewPager vPager;
-    View grandConteneur;
-    Random ran;
-    int destinNumber;
-    Animation animation;
+    private MyFragmentAdapter mAdapter ;
+    private ViewPager vPager;
+    private View grandConteneur;
+    private Random ran;
+    private  int destinNumber;
+    private Animation animation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         // FOrce l'activité à etre en plein ecran
-
-
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

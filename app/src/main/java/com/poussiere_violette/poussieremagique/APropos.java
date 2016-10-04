@@ -31,7 +31,7 @@ import android.view.WindowManager;
 
 public class APropos extends Activity {
 
-    View creativeImage;
+   private View creativeImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,6 @@ public class APropos extends Activity {
 
     @Override
     public void onPause()
-    {super.onPause();
-    finish();}
+    {super.onPause();}
 
 }

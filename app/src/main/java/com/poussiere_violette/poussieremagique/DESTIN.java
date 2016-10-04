@@ -32,14 +32,14 @@ import java.util.Random;
 public class DESTIN {
 
 
-    int frag5, frag6 ;
-    int image;
-    int[] nouvelles = new int [20] ;
-    int sousTitresColor;
-    int frag6Size;
-    int tabSize;
-    int timeSousTitre;
-    int music;
+    private  int frag5, frag6 ;
+    private int image;
+    private  int[] nouvelles = new int [20] ;
+    private int sousTitresColor;
+    private int frag6Size;
+    private int tabSize;
+    private int timeSousTitre;
+    private int music;
 
     public DESTIN(int destinNumber, Context c) {
 

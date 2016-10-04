@@ -42,14 +42,13 @@ public class TextFragment extends Fragment {
 
 
 
-    int fragVal;
-    Animation animation, animation2, animation3, seq1;
-    TextView tv;
-    View v;
-    View grandConteneur;
-    DESTIN destin;
-
-    int destinNumber;
+    private int fragVal;
+    private Animation animation, animation2, animation3, seq1;
+    private TextView tv;
+    private View v;
+    private View grandConteneur;
+    private DESTIN destin;
+    private int destinNumber;
 
     static TextFragment init(int val) {
         TextFragment tf = new TextFragment();

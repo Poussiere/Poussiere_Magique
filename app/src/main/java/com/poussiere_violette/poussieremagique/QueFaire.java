@@ -33,11 +33,11 @@ import android.widget.TextView;
 
 public class QueFaire extends Activity {
 
-    View conteneur;
-    TextView tv1, tv2, tv3, tv4;
-    Intent i, j , k, startMain;
-    Animation fondu, sortie;
-    int destinNumber;
+    private View conteneur;
+    private TextView tv1, tv2, tv3, tv4;
+    private Intent i, j , k, startMain;
+    private Animation fondu, sortie;
+    private int destinNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
