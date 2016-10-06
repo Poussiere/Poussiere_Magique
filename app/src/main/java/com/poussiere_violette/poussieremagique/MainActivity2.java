@@ -30,8 +30,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 

@@ -19,29 +19,18 @@
 
 package com.poussiere_violette.poussieremagique;
 
-import android.annotation.SuppressLint;
+
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.IOException;
 
 
 public class destine extends Activity  {
@@ -89,7 +78,7 @@ public class destine extends Activity  {
 
 
         isThreadRunning=true;
-        //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, m�me vide
+        //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, meme vide
         handler=new Handler(){
 
             public void handleMessage(Message msg){
