@@ -33,7 +33,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class destine extends Activity  {
+public class Destine extends Activity  {
 
 
     private View conteneurDuDestin;
@@ -62,7 +62,7 @@ public class destine extends Activity  {
         //Forcer l'ecran à rester allumé
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setContentView(R.layout.activity_destine2);
+        setContentView(R.layout.activity_destine);
 
 
         j = getIntent();
@@ -89,7 +89,7 @@ public class destine extends Activity  {
                     imagee.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                        Intent in=new Intent(destine.this, QueFaire.class);
+                        Intent in=new Intent(Destine.this, QueFaire.class);
                             in.putExtra("num", destinNumber);
                             startActivity(in);
                             overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
@@ -110,12 +110,12 @@ public class destine extends Activity  {
                 isThreadRunning=true;
 
                 if (destin.getMusic() != 0) {
-                    mPlayer = MediaPlayer.create(destine.this, destin.getMusic());
+                    mPlayer = MediaPlayer.create(Destine.this, destin.getMusic());
                     mPlayer.start();
                  mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-                            Intent in=new Intent(destine.this, QueFaire.class);
+                            Intent in=new Intent(Destine.this, QueFaire.class);
                             in.putExtra("num", destinNumber);
                             startActivity(in);
                             overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);

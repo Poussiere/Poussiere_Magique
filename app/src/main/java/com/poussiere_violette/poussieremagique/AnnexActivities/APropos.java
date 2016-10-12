@@ -18,7 +18,7 @@
 */
 
 
-package com.poussiere_violette.poussieremagique;
+package com.poussiere_violette.poussieremagique.AnnexActivities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,6 +26,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+
+import com.poussiere_violette.poussieremagique.MainActivity;
+import com.poussiere_violette.poussieremagique.R;
 
 public class APropos extends Activity {
 

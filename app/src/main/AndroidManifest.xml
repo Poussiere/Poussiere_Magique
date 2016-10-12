@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.poussiere_violette.poussieremagique"
-    android:versionCode="1"
-    android:versionName="1.0">
+    android:versionCode="2"
+    android:versionName="1.1">
 
     <application
         android:allowBackup="true"
@@ -22,14 +22,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".destine"
+            android:name=".Destine"
             android:label="@string/title_activity_destine"
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".MainActivity2"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name=".APropos"
+            android:name=".AnnexActivities.APropos"
             android:screenOrientation="sensorLandscape"
             />
         <activity

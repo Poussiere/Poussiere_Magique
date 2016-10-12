@@ -23,6 +23,7 @@ package com.poussiere_violette.poussieremagique;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -31,10 +32,11 @@ import android.widget.TextView;
 public class QueFaire extends Activity {
 
     private View conteneur;
-    private TextView tv1, tv2, tv3, tv4;
+    private TextView tv1, tv2, tv3, tv4, tv5;
     private Intent i, j , k, startMain;
     private Animation fondu, sortie;
     private int destinNumber;
+    private String partageText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +48,16 @@ public class QueFaire extends Activity {
         tv2=(TextView)findViewById(R.id.retour_destin);
         tv3=(TextView)findViewById(R.id.relancer_roue);
         tv4=(TextView)findViewById(R.id.quitter);
+        tv5=(TextView) findViewById(R.id.partager);
         conteneur = (View)findViewById(R.id.conteneur_du_que_faire);
         fondu=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
         sortie=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
         fondu.setDuration(500);
         sortie.setDuration(500);
-        i=new Intent(QueFaire.this, destine.class);
+
+
+
+        i=new Intent(QueFaire.this, Destine.class);
         j=new Intent(QueFaire.this, MainActivity.class);
         startMain = new Intent(Intent.ACTION_MAIN);
         startMain.addCategory(Intent.CATEGORY_HOME);
@@ -59,6 +65,35 @@ public class QueFaire extends Activity {
 
         k = getIntent();
         destinNumber = k.getIntExtra("num", 1);
+
+        //Le texte à partager diffère en fonction du destin :
+
+        switch (destinNumber) {
+            case 1 :
+                partageText=getResources().getString(R.string.link1);
+                break;
+            case 2 :
+                partageText=getResources().getString(R.string.link2);
+                break;
+            case 3 :
+                partageText=getResources().getString(R.string.link3);
+                break;
+            case 4 :
+                partageText=getResources().getString(R.string.link4);
+                break;
+
+        }
+        // Le premier textView sert à partager le destin à l'aide des applications dispo sur le téléphone
+        tv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<a href=\"https://play.google.com/store/apps/details?id=com.poussiere_violette.poussieremagique\">J\'ai pris le chemin du rêve</a>"));
+                sendIntent.setType("text/html");
+                startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.titre_partage)));
+            }
+        });
 
 
         tv2.setOnClickListener(new View.OnClickListener() {

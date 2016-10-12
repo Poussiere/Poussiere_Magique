@@ -31,8 +31,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import java.util.Random;
-
 
 public class TextFragment extends Fragment {
 
@@ -141,7 +139,7 @@ public class TextFragment extends Fragment {
                     public void onClick(View v)
                     {
                         tv.setTextColor(00000000);
-                        Intent i = new Intent(getActivity(), destine.class);
+                        Intent i = new Intent(getActivity(), Destine.class);
                         i.putExtra("num", destinNumber);
                         startActivity(i);
 

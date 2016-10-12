@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:id="@+id/conteneur_du_destin"
-    tools:context="com.poussiere_violette.poussieremagique.destine">
+    tools:context="com.poussiere_violette.poussieremagique.Destine">
 
 
 
