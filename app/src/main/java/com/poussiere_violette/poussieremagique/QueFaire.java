@@ -88,11 +88,9 @@ public class QueFaire extends Activity {
             @Override
             public void onClick(View view) {
                 Intent sendIntent = new Intent();
-                String lien = "<a href=\"https://play.google.com/store/apps/details?id=com.poussiere_violette.poussieremagique\"> Poussière.</a>";
-                partageText+=lien;
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(partageText));
-                sendIntent.setType("text/html" );
+                sendIntent.putExtra(Intent.EXTRA_TEXT, partageText);
+                sendIntent.setType("text/plain" );
                 startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.titre_partage)));
             }
         });
