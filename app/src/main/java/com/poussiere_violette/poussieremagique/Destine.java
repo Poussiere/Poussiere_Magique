@@ -78,7 +78,7 @@ public class Destine extends Activity  {
 
 
         isThreadRunning=true;
-        //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, meme vide
+        //On cree un handler qui va executer du code dans l'IU thread à chaque fois qu'il recevra un message, meme vide...
         handler=new Handler(){
 
             public void handleMessage(Message msg){
