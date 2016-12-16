@@ -4,7 +4,7 @@
     android:interpolator="@android:anim/linear_interpolator" >
 
 
-    <!-- Move -->
+
     <translate
         android:duration="800"
         android:fillAfter="true"
@@ -30,7 +30,7 @@
         android:startOffset="2700"
         android:toYDelta="-70%p" />
 
-    <!-- Rotate 360 degrees -->
+
     <rotate
         android:duration="1000"
         android:fromDegrees="0"

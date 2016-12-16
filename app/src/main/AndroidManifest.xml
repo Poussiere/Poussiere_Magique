@@ -29,7 +29,7 @@
             android:name=".MainActivity2"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name=".AnnexActivities.APropos"
+            android:name=".APropos"
             android:screenOrientation="sensorLandscape"
             />
         <activity

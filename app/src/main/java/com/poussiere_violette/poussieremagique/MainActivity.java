@@ -30,8 +30,6 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import com.poussiere_violette.poussieremagique.AnnexActivities.APropos;
-
 
 public class MainActivity extends Activity {
 
