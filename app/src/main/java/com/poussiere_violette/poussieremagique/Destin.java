@@ -29,7 +29,7 @@ import java.util.Random;
 /**
  * Chaque objet destin possede un texte spécifique pour le sixième fragment d'introduction, une image, une musique et un tableau de x String correspondant aux commentaires qui défilent sur l'image
  */
-public class DESTIN {
+public class Destin {
 
 
     private  int frag5, frag6 ;
@@ -41,7 +41,7 @@ public class DESTIN {
     private int timeSousTitre;
     private int music;
 
-    public DESTIN(int destinNumber, Context c) {
+    public Destin(int destinNumber, Context c) {
 
         switch (destinNumber) {
             case 1:

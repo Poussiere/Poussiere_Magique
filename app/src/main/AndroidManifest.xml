@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Destine"
+            android:name=".Destine_activity"
             android:label="@string/title_activity_destine"
             android:screenOrientation="sensorLandscape" />
         <activity

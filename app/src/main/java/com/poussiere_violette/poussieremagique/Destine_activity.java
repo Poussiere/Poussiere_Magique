@@ -33,13 +33,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class Destine extends Activity  {
+public class Destine_activity extends Activity  {
 
 
     private View conteneurDuDestin;
     private Intent j;
     private int destinNumber;
-    private DESTIN destin;
+    private Destin destin;
     private ImageView imagee;
     private boolean isThreadRunning;
     private Handler handler;
@@ -67,7 +67,7 @@ public class Destine extends Activity  {
 
         j = getIntent();
         destinNumber = j.getIntExtra("num", 1);
-        destin = new DESTIN(destinNumber, getApplicationContext());
+        destin = new Destin(destinNumber, getApplicationContext());
 
         conteneurDuDestin = findViewById(R.id.conteneur_du_destin);
         imagee = (ImageView) findViewById(R.id.fullscreen_content);
@@ -89,7 +89,7 @@ public class Destine extends Activity  {
                     imagee.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                        Intent in=new Intent(Destine.this, QueFaire.class);
+                        Intent in=new Intent(Destine_activity.this, QueFaire.class);
                             in.putExtra("num", destinNumber);
                             startActivity(in);
                             overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);
@@ -110,12 +110,12 @@ public class Destine extends Activity  {
                 isThreadRunning=true;
 
                 if (destin.getMusic() != 0) {
-                    mPlayer = MediaPlayer.create(Destine.this, destin.getMusic());
+                    mPlayer = MediaPlayer.create(Destine_activity.this, destin.getMusic());
                     mPlayer.start();
                  mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-                            Intent in=new Intent(Destine.this, QueFaire.class);
+                            Intent in=new Intent(Destine_activity.this, QueFaire.class);
                             in.putExtra("num", destinNumber);
                             startActivity(in);
                             overridePendingTransition(R.anim.blink_no_repeat, R.anim.inverse_blink_no_repeat);

@@ -41,7 +41,7 @@ public class TextFragment extends Fragment {
     private TextView tv;
     private View v;
     private View grandConteneur;
-    private DESTIN destin;
+    private Destin destin;
     private int destinNumber;
 
     static TextFragment init(int val) {
@@ -70,7 +70,7 @@ public class TextFragment extends Fragment {
 
 
         destinNumber=((MainActivity2)this.getActivity()).getDestinNumber();
-        destin=new DESTIN(destinNumber, getContext());
+        destin=new Destin(destinNumber, getContext());
 
 
         animation = AnimationUtils.loadAnimation(getContext(),R.anim.zoomout);
@@ -139,7 +139,7 @@ public class TextFragment extends Fragment {
                     public void onClick(View v)
                     {
                         tv.setTextColor(00000000);
-                        Intent i = new Intent(getActivity(), Destine.class);
+                        Intent i = new Intent(getActivity(), Destine_activity.class);
                         i.putExtra("num", destinNumber);
                         startActivity(i);
 

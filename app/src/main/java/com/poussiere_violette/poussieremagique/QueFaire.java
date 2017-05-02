@@ -23,7 +23,6 @@ package com.poussiere_violette.poussieremagique;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -57,7 +56,7 @@ public class QueFaire extends Activity {
 
 
 
-        i=new Intent(QueFaire.this, Destine.class);
+        i=new Intent(QueFaire.this, Destine_activity.class);
         j=new Intent(QueFaire.this, MainActivity.class);
         startMain = new Intent(Intent.ACTION_MAIN);
         startMain.addCategory(Intent.CATEGORY_HOME);
