@@ -1,8 +1,13 @@
 # Poussiere_Magique
  
- Ce programme est une application à vocation artistique. Il s'agit d'une roue du destin qui mène vers plusieurs scénarii offrant une expérience sensorielle à l'utilisateur.
- C'est une réflexion sur le sens de la vie, du destin, du temps qui passe... par la transmission d'émotions brèves mais intenses.
- Cette application est également un hommage à plusieurs oeuvres du cinéma, de la littérature et du jeu video. 
+ This android software is an artistic app. This is a wheel of destiny that leads to several scenarii offering a full sensory experience to its user. It is a reflection on the meaning of life, fate and time passing by. 
+ This app is also a tribute to several works of cinema, literature and video games.
+ 
+ Ce programme est une application à vocation artistique. Il s'agit d'une roue du destin qui mène vers plusieurs scénarii offrant   une expérience sensorielle à son utilisateur.
+ C'est une réflexion sur le sens de la vie, du destin, du temps qui passe.
+ Cette application est également un hommage à plusieurs oeuvres du cinema, de la littérature et du jeu vidéo. 
+ 
+
  
  
     Copyright (C) <2016>  <Nicolas Boutin>
