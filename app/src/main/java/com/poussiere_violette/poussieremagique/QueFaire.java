@@ -121,6 +121,7 @@ public class QueFaire extends Activity {
                 tv1.startAnimation(fondu);
                 tv4.startAnimation(fondu);
                 tv3.startAnimation(fondu);
+                tv5.startAnimation(fondu);
 
 
 
@@ -152,6 +153,7 @@ public class QueFaire extends Activity {
                 tv1.startAnimation(fondu);
                 tv2.startAnimation(fondu);
                 tv4.startAnimation(fondu);
+                tv5.startAnimation(fondu);
             }
         });
 
@@ -178,6 +180,7 @@ public class QueFaire extends Activity {
                 tv1.startAnimation(fondu);
                 tv2.startAnimation(fondu);
                 tv3.startAnimation(fondu);
+                tv5.startAnimation(fondu);
 
             }
         });

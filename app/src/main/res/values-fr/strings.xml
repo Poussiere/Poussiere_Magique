@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+    <string name="app_name">Poussière</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="t1">Je</string>
+    <string name="t2">prends</string>
+    <string name="t3">le</string>
+    <string name="t4">chemin</string>
+    <string name="t5">du</string>
+    <string name="t5bis">de</string>
+
+
+    <string name="t6">rêve</string>
+    <string name="t7">passé</string>
+    <string name="t8">bout du\nmonde</string>
+    <string name="t9">la fin des\ntemps</string>
+
+    <string name="blank"> </string>
+
+
+    <string name="n1">D\'abord il y eut la lumière</string>
+    <string name="n2">Los Angeles dégageait une luminosité si rassurante</string>
+    <string name="n3">Puis les palmiers grands comme des grattes ciels</string>
+    <string name="n4">Des voitures de sport à tous les coins de rue</string>
+    <string name="n5">Je décidai de faire de ma vie un rêve</string>
+    <string name="n6">Je fréquentais des acteurs, des réalisateurs célèbres</string>
+    <string name="n7">Le succès, l\'amour, l\'argent</string>
+    <string name="n8">J\'ai tout eu, tout vécu</string>
+    <string name="n9">Mais la lumière m\'a rendue folle</string>
+    <string name="n10">J\'ai rêvé ma vie</string>
+
+    <string name="m1">Au mon Dieu, tu entends ce son ?</string>
+    <string name="m2">Vas y monte le volume !</string>
+    <string name="m3">Yeaahhh baby ça c’est bon</string>
+    <string name="m4">Ca me rappelle ma jeunesse à Miami</string>
+    <string name="m5">1983, on sortait avec des masques d\'animaux</string>
+    <string name="m6">C\'était des soirées complètement folles</string>
+    <string name="m7">Si j\'osais je remettrais ça ce soir</string>
+    <string name="m8">Oh et puis mince allez c\'est parti !</string>
+    <string name="m9">Prépare-toi Paris !</string>
+    <string name="m10">Tu vas apprendre comment on s\'amusait à Miami dans les 80\'s</string>
+
+    <string name="o1">Le bateau nous avait débarqués dans l\'archipel trois jours auparavant</string>
+    <string name="o2">Depuis, nous avions roulé à vélo sans nous arrêter</string>
+    <string name="o3">Traversant des tunnels lugubres pour passer d\'îles en îles</string>
+    <string name="o4">Des routes désertes parsemées de rochers tombés des montagnes</string>
+    <string name="o5">Partout les paysages majestueux des Lofoten ne cessaient de nous éblouir</string>
+    <string name="o6">Mais partout ce sifflement et cette odeur de pierre qui semblaient venir des entrailles de la terre</string>
+    <string name="o7">menaçaient de nous engloutir</string>
+    <string name="o8">Ce qui sur la carte était une petite ville </string>
+    <string name="o9">n\'était en réalité que trois maisons en ruine et un embarcadère désaffecté</string>
+    <string name="o10">Il n\'y avait plus de bateaux depuis longtemps</string>
+    <string name="o11">Nous étions là, vivants</string>
+    <string name="o12">mais au bout du monde</string>
+
+
+    <string name="p1">Trois fois par semaine, je courais au bord du canal en direction de Bobigny</string>
+    <string name="p2">Au milieu de mon parcours, je passais sous un immense pont de chemin de fer</string>
+    <string name="p3">Territoire des pigeons, des rats et des peurs de ceux qui osaient le traverser</string>
+    <string name="p4">Le vacarme et les tremblements provoqués par un passage de train donnaient l\'impression à celui qui était dessous de vivre la fin des temps</string>
+    <string name="p5">Alors que je venais de franchir le pont, j\'entendis ce fracas</string>
+    <string name="p6">Mais contrairement à d\'habitude, il s\'était arrêté net, comme si quelque chose avait claqué dans l\'air</string>
+    <string name="p7">Plus de résonance, plus de pigeons qui s\'envolent, rien à part le silence</string>
+    <string name="p8">Angoissé, je retournai sur mes pas pour traverser le pont à nouveau</string>
+    <string name="p9">en vain</string>
+    <string name="p10">A l\'intérieur les ténèbres se déroulaient à l\'infini</string>
+    <string name="p11">Plus j\'avançais, et plus il faisait noir</string>
+    <string name="p12"> Je fis demi-tour avant de me retrouver dans l’obscurité la plus complète</string>
+    <string name="p13">Une fois sorti je réalisai qu\'une partie du monde avait disparu</string>/
+
+
+    <string name="title_activity_destine">destine</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="copyright">Francisco Pinto - Maldita Marisol</string>
+    <string name="nin">Nine Inch Nails - 999,999</string>
+    <string name="nin2">Nine Inch Nails - Corona Radiata</string>
+
+    <string name="a_propos">A propos</string>
+    <string name="des">Tourner la roue\ndu destin</string>
+
+    <string name="a_propos_contenu1">
+        Fonctionnement : \n
+        1. Tourner la roue pour se retrouver au début du chemin.\n
+        2. Faire défiler le texte vers la droite jusqu\'à la fin du chemin. \n
+        3. Cliquer sur le texte pour faire apparaître le destin. \n\nCette application est sous licence publique générale GNU. \nPour plus d\'informations voir code source : https://github.com/Poussiere/Poussiere_Magique\n\n
+    Musiques :\n
+        Le passé : Francisco Pinto - Maldita Marisol\n
+        Le rêve : Nine Inch Nails - 999,999\n
+        La fin des temps : Nine Inch Nails - Corona Radiata\n
+        \n
+        Ces 3 oeuvres sont sous licence Creative Commons
+    </string>
+
+    <string name="a_propos_contenu2">
+        \n
+        Images issues de www.Pixabay.com\n\n
+        Sons issus de www.Lasonotheque.org\n
+        \n
+    </string>
+    <string name="title_activity_que_faire">Que souhaitez vous faire?</string>
+    <string name="partager">Partager</string>
+    <string name="retour_destin">Revoir</string>
+    <string name="relancer_roue">Relancer la roue</string>
+    <string name="quitter">Quitter</string>
+    <string name="creative_lien">https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr</string>
+
+    <string name="titre_partage">Partager via...</string>
+    <string name="link1">J\'ai pris le chemin du rêve... https://goo.gl/IxPFcs</string>
+    <string name="link2">J\'ai pris le chemin du passé... https://goo.gl/IxPFcs</string>
+    <string name="link3">J\'ai pris le chemin du bout du monde... https://goo.gl/IxPFcs</string>
+    <string name="link4">J\'ai pris le chemin de la fin des temps... https://goo.gl/IxPFcs</string>
+
+</resources>

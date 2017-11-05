@@ -47,7 +47,7 @@ public class Destin {
             case 1:
                 frag5=R.string.t5;
                 frag6=R.string.t6;
-                frag6Size=100;
+                frag6Size=70;
                 timeSousTitre=8000;
 
                 image=R.drawable.lasmall;
@@ -73,7 +73,7 @@ public class Destin {
                 image=R.drawable.hotline;
                 frag5=R.string.t5;
                 frag6=R.string.t7;
-                frag6Size=100;
+                frag6Size=70;
                 timeSousTitre=3500;
                 tabSize=11;
                 sousTitresColor=R.color.blanc;
